@@ -1,0 +1,5 @@
+/* Import modular CSS files */
+@import './styles/colors.css';
+@import './styles/globals.css';
+@import './styles/components.css';
+@import './styles/rtl.css';

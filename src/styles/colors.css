@@ -1,0 +1,169 @@
+/* Modern Color System - Comprehensive Design Tokens */
+
+:root {
+  /* Modern Brand Colors - Sophisticated Palette */
+  --brand-primary: #6366f1;       /* Indigo - Modern & Professional */
+  --brand-secondary: #a855f7;     /* Purple - Creative & Bold */
+  --brand-tertiary: #06b6d4;      /* Cyan - Fresh & Energetic */
+  --brand-accent: #f59e0b;        /* Amber - Warm & Inviting */
+  
+  /* Semantic Color System - Modern & Vibrant */
+  --success-50: #f0fdf4;
+  --success-100: #dcfce7;
+  --success-500: #22c55e;         /* Bright Green - Fresh & Positive */
+  --success-600: #16a34a;         /* Darker green */
+  --success-700: #15803d;         /* Even darker */
+  
+  --danger-50: #fef2f2;
+  --danger-100: #fee2e2;
+  --danger-500: #f43f5e;          /* Rose Red - Modern & Bold */
+  --danger-600: #e11d48;          /* Darker rose */
+  --danger-700: #be123c;          /* Even darker */
+  
+  --warning-50: #fffbeb;
+  --warning-100: #fef3c7;
+  --warning-500: #f59e0b;         /* Amber - Warm & Alert */
+  --warning-600: #d97706;         /* Darker amber */
+  --warning-700: #b45309;         /* Even darker */
+  
+  --info-50: #eff6ff;
+  --info-100: #dbeafe;
+  --info-500: #3b82f6;            /* Blue - Trustworthy & Professional */
+  --info-600: #2563eb;            /* Darker blue */
+  --info-700: #1d4ed8;            /* Even darker */
+  
+  /* Modern Surface Colors - Sophisticated Dark Theme */
+  --surface-0: #0f0f23;           /* Deep navy base - More sophisticated */
+  --surface-1: #1a1a2e;           /* Dark navy */
+  --surface-2: #16213e;           /* Medium navy */
+  --surface-3: #0f3460;           /* Lighter navy */
+  --surface-4: #533483;           /* Purple accent */
+  
+  /* Enhanced Text Hierarchy - Modern & Readable */
+  --text-primary: #ffffff;        /* Pure white */
+  --text-secondary: #e2e8f0;      /* Soft white */
+  --text-tertiary: #cbd5e1;       /* Light gray */
+  --text-muted: #94a3b8;          /* Muted gray */
+  
+  /* Interactive States - Modern & Subtle */
+  --hover-overlay: rgba(99, 102, 241, 0.1);
+  --active-overlay: rgba(99, 102, 241, 0.15);
+  --focus-ring: #6366f1;
+  
+  /* Light Theme Overrides - Modern & Clean */
+  --light-surface-0: #ffffff;        /* Pure white */
+  --light-surface-1: #f8fafc;        /* Very light gray */
+  --light-surface-2: #f1f5f9;        /* Light gray */
+  --light-surface-3: #e2e8f0;        /* Medium light gray */
+  --light-surface-4: #cbd5e1;        /* Medium gray */
+  
+  --light-text-primary: #0f172a;     /* Deep navy */
+  --light-text-secondary: #334155;   /* Dark gray */
+  --light-text-tertiary: #64748b;    /* Medium gray */
+  --light-text-muted: #94a3b8;       /* Light gray */
+}
+
+/* Light Theme */
+.light {
+  --surface-0: var(--light-surface-0);
+  --surface-1: var(--light-surface-1);
+  --surface-2: var(--light-surface-2);
+  --surface-3: var(--light-surface-3);
+  --surface-4: var(--light-surface-4);
+  
+  --text-primary: var(--light-text-primary);
+  --text-secondary: var(--light-text-secondary);
+  --text-tertiary: var(--light-text-tertiary);
+  --text-muted: var(--light-text-muted);
+  
+  --hover-overlay: rgba(0, 0, 0, 0.05);
+  --active-overlay: rgba(0, 0, 0, 0.1);
+}
+
+/* High Contrast Mode - Enhanced */
+@media (prefers-contrast: high) {
+  :root {
+    --success-500: #00ff00;        /* Bright green */
+    --danger-500: #ff0000;         /* Bright red */
+    --warning-500: #ffaa00;        /* Bright orange */
+    --info-500: #0080ff;           /* Bright blue */
+    --brand-primary: #6366f1;      /* Indigo for high contrast */
+    --text-primary: #ffffff;       /* Pure white */
+    --text-secondary: #ffffff;     /* Pure white */
+    --surface-0: #000000;          /* Pure black */
+    --surface-1: #000000;          /* Pure black */
+  }
+}
+
+/* Color Blind Friendly Alternative - Modern */
+.colorblind-safe {
+  --success-500: #2e7d32;          /* Forest green */
+  --warning-500: #f57c00;          /* Deep orange */
+  --danger-500: #d32f2f;           /* Deep red */
+  --info-500: #1976d2;             /* Deep blue */
+  --brand-primary: #6366f1;        /* Indigo for colorblind accessibility */
+  --brand-secondary: #7b1fa2;      /* Deep purple */
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Interactive Card Base */
+.interactive-card {
+  @apply transition-all duration-200 hover:scale-[1.02] hover:shadow-lg;
+  background: linear-gradient(135deg, var(--surface-1), var(--surface-2));
+}
+
+.interactive-card:hover {
+  background: linear-gradient(135deg, var(--surface-2), var(--surface-3));
+}
+
+/* Status Indicator Classes */
+.status-excellent { 
+  @apply bg-gradient-success text-white; 
+}
+
+.status-good { 
+  @apply bg-gradient-info text-white; 
+}
+
+.status-warning { 
+  @apply bg-gradient-warning text-white; 
+}
+
+.status-critical { 
+  @apply bg-gradient-danger text-white; 
+}
+
+/* Color Animation Classes */
+.color-transition { 
+  @apply transition-colors duration-300 ease-in-out; 
+}
+
+.gradient-hover { 
+  @apply hover:from-brand-primary hover:to-brand-secondary; 
+}
+
+.pulse-success { 
+  @apply animate-pulse;
+  background-color: rgba(34, 197, 94, 0.2);
+}
+
+/* Glassmorphism Effects */
+.glassmorphism {
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.light .glassmorphism {
+  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+  border: 1px solid rgba(0,0,0,0.1);
+}

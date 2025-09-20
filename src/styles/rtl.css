@@ -1,0 +1,188 @@
+/* RTL Support - Centralized Direction Handling */
+
+/* ===== RTL BASE STYLES ===== */
+.rtl {
+  direction: rtl;
+}
+
+.rtl * {
+  text-align: right;
+}
+
+/* ===== RTL LAYOUT UTILITIES ===== */
+.rtl .ml-1 { margin-left: 0; margin-right: 0.25rem; }
+.rtl .ml-2 { margin-left: 0; margin-right: 0.5rem; }
+.rtl .ml-3 { margin-left: 0; margin-right: 0.75rem; }
+.rtl .ml-4 { margin-left: 0; margin-right: 1rem; }
+.rtl .ml-6 { margin-left: 0; margin-right: 1.5rem; }
+.rtl .ml-8 { margin-left: 0; margin-right: 2rem; }
+
+.rtl .mr-1 { margin-right: 0; margin-left: 0.25rem; }
+.rtl .mr-2 { margin-right: 0; margin-left: 0.5rem; }
+.rtl .mr-3 { margin-right: 0; margin-left: 0.75rem; }
+.rtl .mr-4 { margin-right: 0; margin-left: 1rem; }
+.rtl .mr-6 { margin-right: 0; margin-left: 1.5rem; }
+.rtl .mr-8 { margin-right: 0; margin-left: 2rem; }
+
+.rtl .pl-1 { padding-left: 0; padding-right: 0.25rem; }
+.rtl .pl-2 { padding-left: 0; padding-right: 0.5rem; }
+.rtl .pl-3 { padding-left: 0; padding-right: 0.75rem; }
+.rtl .pl-4 { padding-left: 0; padding-right: 1rem; }
+.rtl .pl-6 { padding-left: 0; padding-right: 1.5rem; }
+.rtl .pl-8 { padding-left: 0; padding-right: 2rem; }
+.rtl .pl-10 { padding-left: 0; padding-right: 2.5rem; }
+.rtl .pl-12 { padding-left: 0; padding-right: 3rem; }
+
+.rtl .pr-1 { padding-right: 0; padding-left: 0.25rem; }
+.rtl .pr-2 { padding-right: 0; padding-left: 0.5rem; }
+.rtl .pr-3 { padding-right: 0; padding-left: 0.75rem; }
+.rtl .pr-4 { padding-right: 0; padding-left: 1rem; }
+.rtl .pr-6 { padding-right: 0; padding-left: 1.5rem; }
+.rtl .pr-8 { padding-right: 0; padding-left: 2rem; }
+.rtl .pr-10 { padding-right: 0; padding-left: 2.5rem; }
+.rtl .pr-12 { padding-right: 0; padding-left: 3rem; }
+
+/* ===== RTL FLEXBOX ===== */
+.rtl .flex-row {
+  flex-direction: row-reverse;
+}
+
+.rtl .justify-start { justify-content: flex-end; }
+.rtl .justify-end { justify-content: flex-start; }
+
+/* ===== RTL POSITIONING ===== */
+.rtl .left-0 { left: auto; right: 0; }
+.rtl .right-0 { right: auto; left: 0; }
+.rtl .left-3 { left: auto; right: 0.75rem; }
+.rtl .right-3 { right: auto; left: 0.75rem; }
+
+/* ===== RTL BORDERS ===== */
+.rtl .rounded-l { 
+  border-top-left-radius: 0; 
+  border-bottom-left-radius: 0; 
+  border-top-right-radius: 0.25rem; 
+  border-bottom-right-radius: 0.25rem; 
+}
+
+.rtl .rounded-r { 
+  border-top-right-radius: 0; 
+  border-bottom-right-radius: 0; 
+  border-top-left-radius: 0.25rem; 
+  border-bottom-left-radius: 0.25rem; 
+}
+
+.rtl .rounded-l-md { 
+  border-top-left-radius: 0; 
+  border-bottom-left-radius: 0; 
+  border-top-right-radius: 0.375rem; 
+  border-bottom-right-radius: 0.375rem; 
+}
+
+.rtl .rounded-r-md { 
+  border-top-right-radius: 0; 
+  border-bottom-right-radius: 0; 
+  border-top-left-radius: 0.375rem; 
+  border-bottom-left-radius: 0.375rem; 
+}
+
+/* ===== RTL TRANSFORMS ===== */
+.rtl .-translate-x-full { transform: translateX(100%); }
+.rtl .translate-x-0 { transform: translateX(0); }
+
+/* ===== RTL SIDEBAR ===== */
+.rtl .sidebar {
+  right: 0;
+  left: auto;
+  border-right: none;
+  border-left: 1px solid hsl(var(--border));
+}
+
+.rtl .main-content {
+  margin-right: var(--sidebar-width);
+  margin-left: 0;
+}
+
+/* ===== RTL FORM ELEMENTS ===== */
+.rtl input[type="text"],
+.rtl input[type="email"],
+.rtl input[type="password"],
+.rtl textarea,
+.rtl select {
+  text-align: right;
+}
+
+.rtl .form-input {
+  text-align: right;
+}
+
+.rtl .form-input::placeholder {
+  text-align: right;
+}
+
+/* ===== RTL ICONS ===== */
+.rtl .icon-left {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+.rtl .icon-right {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* ===== RTL TABLES ===== */
+.rtl table {
+  direction: rtl;
+}
+
+.rtl th,
+.rtl td {
+  text-align: right;
+}
+
+/* ===== RTL MODALS ===== */
+.rtl .modal-content {
+  text-align: right;
+}
+
+/* ===== RTL DROPDOWNS ===== */
+.rtl .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+/* ===== RTL NAVIGATION ===== */
+.rtl .nav-item {
+  text-align: right;
+}
+
+/* ===== RTL SPACE UTILITIES ===== */
+.rtl .space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.rtl .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.rtl .space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.rtl .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.rtl .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
