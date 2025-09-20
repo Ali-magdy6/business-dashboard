@@ -37,13 +37,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       {/* Main content */}
-      <div className="main-content flex-1 flex flex-col overflow-hidden">
+      <div className="main-content flex-1 flex flex-col overflow-hidden lg:ml-0">
         {/* Header */}
         <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
 
         {/* Page content */}
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-background">
-          <div className="px-3 py-4 lg:px-4 lg:py-5">
+          <div className="px-2 py-3 sm:px-3 sm:py-4 lg:px-4 lg:py-5">
             {children}
           </div>
         </main>

@@ -49,6 +49,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           sidebar backdrop-blur-sm transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0
           ${isRTL ? 'right-0' : 'left-0'}
           ${isOpen ? 'translate-x-0' : isRTL ? 'translate-x-full' : '-translate-x-full'}
+          ${isOpen ? 'open' : ''}
         `}
       >
         <div className="flex items-center justify-between h-14 px-3 border-b sidebar-header">

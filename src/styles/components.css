@@ -112,6 +112,45 @@
     @apply p-4 align-middle [&:has([role=checkbox])]:pr-0;
   }
 
+  /* Mobile table improvements */
+  @media (max-width: 767px) {
+    .table-responsive {
+      @apply overflow-x-auto;
+    }
+    
+    .table {
+      @apply min-w-full;
+    }
+    
+    .table-cell {
+      @apply px-2 py-2 text-xs;
+      white-space: nowrap;
+    }
+    
+    .table-head {
+      @apply px-2 py-2 text-xs;
+    }
+    
+    .table-mobile-stack {
+      @apply block;
+    }
+    
+    .table-mobile-stack .table-row {
+      @apply block border-b border-border mb-4 pb-4;
+    }
+    
+    .table-mobile-stack .table-cell {
+      @apply block px-0 py-1 text-sm;
+      white-space: normal;
+    }
+    
+    .table-mobile-stack .table-cell:before {
+      content: attr(data-label) ": ";
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+  }
+
   .table-caption {
     @apply mt-4 text-sm text-muted-foreground;
   }
@@ -146,6 +185,24 @@
     @apply fixed inset-y-0 z-50 w-[var(--sidebar-width)] bg-background/95 backdrop-blur-md border-r border-border transition-transform duration-300;
     background-color: rgba(30, 41, 59, 0.95);
     border-right-color: rgba(71, 85, 105, 0.5);
+  }
+
+  @media (max-width: 1023px) {
+    .sidebar {
+      width: 280px;
+      transform: translateX(-100%);
+    }
+    
+    .sidebar.open {
+      transform: translateX(0);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .sidebar {
+      position: static;
+      transform: translateX(0);
+    }
   }
 
   .sidebar-header {
@@ -284,7 +341,62 @@
   }
 
   .grid-responsive {
-    @apply grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+    @apply grid gap-3 grid-cols-1 sm:gap-4 sm:grid-cols-2 lg:gap-6 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  /* Mobile-first responsive utilities */
+  @media (max-width: 639px) {
+    .mobile-hidden {
+      display: none !important;
+    }
+    
+    .mobile-full-width {
+      width: 100% !important;
+    }
+    
+    .mobile-text-center {
+      text-align: center !important;
+    }
+    
+    .mobile-p-2 {
+      padding: 0.5rem !important;
+    }
+    
+    .mobile-p-3 {
+      padding: 0.75rem !important;
+    }
+    
+    .mobile-p-4 {
+      padding: 1rem !important;
+    }
+    
+    .mobile-m-2 {
+      margin: 0.5rem !important;
+    }
+    
+    .mobile-m-3 {
+      margin: 0.75rem !important;
+    }
+    
+    .mobile-gap-2 {
+      gap: 0.5rem !important;
+    }
+    
+    .mobile-gap-3 {
+      gap: 0.75rem !important;
+    }
+    
+    .mobile-stack {
+      flex-direction: column !important;
+    }
+    
+    .mobile-text-sm {
+      font-size: 0.875rem !important;
+    }
+    
+    .mobile-text-xs {
+      font-size: 0.75rem !important;
+    }
   }
 
 /* ===== ANIMATIONS ===== */

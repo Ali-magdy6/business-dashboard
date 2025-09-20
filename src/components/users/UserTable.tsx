@@ -135,25 +135,25 @@ const UserTable: React.FC<UserTableProps> = ({ users, onEdit, onDelete }) => {
   return (
     <div className="space-y-4">
       {/* Search and Filters */}
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-muted w-5 h-5" />
           <input
             value={globalFilter ?? ''}
             onChange={(e) => setGlobalFilter(e.target.value)}
             placeholder="Search users..."
-            className="pl-10 pr-4 py-2 w-full text-sm border border-surface-3 rounded-lg bg-surface-2 text-text-primary focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+            className="pl-10 pr-4 py-2 w-full text-sm border border-surface-3 rounded-lg bg-surface-2 text-text-primary focus:ring-2 focus:ring-brand-primary focus:border-transparent mobile-text-sm"
           />
         </div>
-        <button className="btn-secondary flex items-center">
+        <button className="btn-secondary flex items-center mobile-full-width sm:w-auto">
           <Filter className="w-4 h-4 mr-2" />
-          Filters
+          <span className="mobile-hidden">Filters</span>
         </button>
       </div>
 
       {/* Table */}
       <div className="card overflow-hidden">
-        <div className="overflow-x-auto">
+        <div className="table-responsive overflow-x-auto">
           <table className="min-w-full divide-y divide-surface-3">
             <thead className="bg-surface-2">
               {table.getHeaderGroups().map((headerGroup) => (

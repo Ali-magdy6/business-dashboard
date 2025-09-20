@@ -17,11 +17,11 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
         <div className="flex items-center">
           <button
             onClick={onMenuClick}
-            className="lg:hidden btn-ghost btn-sm mr-4"
+            className="lg:hidden btn-ghost btn-sm mr-2 sm:mr-4"
             title="Open menu"
             aria-label="Open menu"
           >
-            <Menu className="w-6 h-6" />
+            <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
           
           <div className="hidden lg:block">
@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 sm:space-x-4">
           {/* Language toggle */}
           <button
             onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
@@ -45,8 +45,8 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
             aria-label={language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
           >
             <div className="flex items-center space-x-1">
-              <Globe className="w-5 h-5" />
-              <span className="text-sm font-medium">{language === 'en' ? 'EN' : 'AR'}</span>
+              <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-xs sm:text-sm font-medium mobile-hidden">{language === 'en' ? 'EN' : 'AR'}</span>
             </div>
           </button>
 
@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
             title="Notifications"
             aria-label="Notifications"
           >
-            <Bell className="w-6 h-6" />
+            <Bell className="w-5 h-5 sm:w-6 sm:h-6" />
             <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-danger-500 ring-2 ring-surface-1"></span>
           </button>
 
@@ -68,11 +68,11 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
             aria-label="Toggle dark mode"
           >
             {darkMode ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
               </svg>
             )}

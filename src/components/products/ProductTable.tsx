@@ -167,25 +167,25 @@ const ProductTable: React.FC<ProductTableProps> = ({ products, onEdit, onDelete,
   return (
     <div className="space-y-4">
       {/* Search and Filters */}
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
           <input
             value={globalFilter ?? ''}
             onChange={(e) => setGlobalFilter(e.target.value)}
             placeholder="Search products..."
-            className="form-input pl-10"
+            className="form-input pl-10 mobile-text-sm"
           />
         </div>
-        <button className="btn-secondary">
+        <button className="btn-secondary mobile-full-width sm:w-auto">
           <Filter className="w-4 h-4 mr-2" />
-          Filters
+          <span className="mobile-hidden">Filters</span>
         </button>
       </div>
 
       {/* Table */}
       <div className="table-card">
-        <div className="overflow-x-auto">
+        <div className="table-responsive overflow-x-auto">
           <table className="table">
             <thead className="table-header">
               {table.getHeaderGroups().map((headerGroup) => (

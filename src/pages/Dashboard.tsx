@@ -95,7 +95,7 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 animate-slide-in-up">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 animate-slide-in-up">
         <ChartCard title={t('salesOverview')}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={salesData}>
@@ -128,7 +128,7 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* Additional Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-slide-in-up">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 animate-slide-in-up">
         <ChartCard title={t('userDevices')} className="lg:col-span-1">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
